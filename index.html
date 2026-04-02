@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP 솔루션 서비스팀 | Team Navigation</title>
+  <style>
+    :root {
+      --lg-red: #a50034;
+      --lg-red-deep: #7d0027;
+      --lg-gray-900: #20252b;
+      --lg-gray-700: #49515a;
+      --lg-gray-500: #7f8790;
+      --lg-gray-200: #d7dde3;
+      --lg-gray-100: #eef2f5;
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --shadow: 0 24px 60px rgba(32, 37, 43, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      color: var(--lg-gray-900);
+      background:
+        radial-gradient(circle at top left, rgba(165, 0, 52, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(165, 0, 52, 0.08), transparent 20%),
+        linear-gradient(135deg, #fafbfc 0%, #f0f3f6 52%, #e9edf1 100%);
+    }
+
+    .page-shell {
+      width: min(1200px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.58);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 24px;
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(140deg, rgba(165, 0, 52, 0.98), rgba(125, 0, 39, 0.94)),
+        var(--lg-red);
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: -60px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.22);
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background: var(--lg-red);
+    }
+
+    .brand-mark::after {
+      content: "LG";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.84;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3.3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-copy p {
+      margin: 16px 0 0;
+      max-width: 620px;
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-content: end;
+      gap: 12px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-panel strong {
+      font-size: 1.08rem;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    main {
+      margin-top: 28px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .team-section {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      border: 1px solid rgba(215, 221, 227, 0.76);
+      box-shadow: 0 18px 36px rgba(32, 37, 43, 0.06);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-title-wrap h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title-wrap p {
+      margin: 8px 0 0;
+      color: var(--lg-gray-700);
+      line-height: 1.6;
+    }
+
+    .part-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(165, 0, 52, 0.1), rgba(165, 0, 52, 0.16));
+      color: var(--lg-red);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .nav-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 220px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--surface-strong);
+      border: 1px solid rgba(215, 221, 227, 0.88);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .nav-card:hover,
+    .nav-card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 32px rgba(165, 0, 52, 0.12);
+      border-color: rgba(165, 0, 52, 0.36);
+      outline: none;
+    }
+
+    .nav-card.coming-soon {
+      cursor: not-allowed;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(243, 246, 248, 0.97));
+    }
+
+    .nav-card.coming-soon:hover,
+    .nav-card.coming-soon:focus-visible {
+      transform: none;
+      box-shadow: none;
+      border-color: rgba(215, 221, 227, 0.88);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-index {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(165, 0, 52, 0.12), rgba(165, 0, 52, 0.2));
+      color: var(--lg-red);
+      font-weight: 800;
+    }
+
+    .state {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .state.public {
+      background: rgba(27, 123, 82, 0.12);
+      color: #146647;
+    }
+
+    .state.private {
+      background: rgba(48, 74, 126, 0.12);
+      color: #28497f;
+    }
+
+    .state.building {
+      background: rgba(165, 0, 52, 0.1);
+      color: var(--lg-red);
+    }
+
+    .nav-card h3 {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: var(--lg-gray-700);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--lg-gray-500);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .meta strong {
+      color: var(--lg-red);
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      padding: 18px 22px;
+      border-radius: 20px;
+      background: rgba(32, 37, 43, 0.04);
+      color: var(--lg-gray-700);
+      line-height: 1.7;
+    }
+
+    .footer-note code {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(165, 0, 52, 0.1);
+      color: var(--lg-red);
+      font-family: inherit;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        width: min(100% - 20px, 100%);
+        margin: 10px auto;
+        padding: 14px;
+        border-radius: 24px;
+      }
+
+      .hero,
+      .team-section {
+        padding: 20px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="brand" aria-label="LG style brand mark">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <p class="eyebrow">ERP TECHOPS TEAM</p>
+            <strong>ERP 솔루션 서비스팀</strong>
+          </div>
+        </div>
+        <h1>팀장님을 위한<br>ERP Team Navigation</h1>
+        <p>
+          자주 확인하시는 업무 공간을 한 페이지에 모았습니다.
+          파트별로 바로 이동할 수 있도록 구성했고, Public / Private / 구현중 상태도 함께 표시했습니다.
+        </p>
+        <div class="status-row">
+          <span class="pill">MSM · 운영/현황</span>
+          <span class="pill">BC · Wire-work</span>
+          <span class="pill">TA · Wire-work</span>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <strong>빠른 사용 안내</strong>
+        <p>실제 주소가 있는 항목은 링크만 연결하면 바로 사용 가능합니다.</p>
+        <p>현재 링크가 없는 항목은 임시 안내 카드로 만들어 두었고, 추후 URL만 교체하면 됩니다.</p>
+      </aside>
+    </section>
+
+    <main>
+      <section class="team-section">
+        <div class="section-head">
+          <div class="section-title-wrap">
+            <h2>MSM 파트</h2>
+            <p>구현 진행 중인 서비스와 내부/외부 접근 공간을 함께 배치했습니다.</p>
+          </div>
+          <div class="part-badge">MSM</div>
+        </div>
+        <div class="card-grid">
+          <a class="nav-card" href="#" aria-label="LG Techops team Effort">
+            <div class="card-top">
+              <div class="card-index">01</div>
+              <span class="state building">구현중</span>
+            </div>
+            <h3>LG Techops team Effort</h3>
+            <p>업무 effort 현황을 확인하는 공간입니다. 현재 구현 중인 서비스로 표시해 두었습니다.</p>
+            <div class="meta">
+              <span>상태: 준비 중</span>
+              <strong>Open</strong>
+            </div>
+          </a>
+
+          <a class="nav-card" href="#" aria-label="GDN 관리 대시보드">
+            <div class="card-top">
+              <div class="card-index">02</div>
+              <span class="state private">Private전자망</span>
+            </div>
+            <h3>GDN 관리 대시보드</h3>
+            <p>전자망 환경에서 접근하는 내부 운영 대시보드입니다. 사내 전용 접속 위치를 연결해 사용하세요.</p>
+            <div class="meta">
+              <span>구분: 내부망</span>
+              <strong>Open</strong>
+            </div>
+          </a>
+
+          <a class="nav-card" href="#" aria-label="상암 점심 메뉴 추천">
+            <div class="card-top">
+              <div class="card-index">03</div>
+              <span class="state public">Public</span>
+            </div>
+            <h3>상암 점심 메뉴 추천</h3>
+            <p>외부에서도 바로 접근 가능한 공개 페이지입니다. 점심 메뉴 탐색용 링크를 연결하면 됩니다.</p>
+            <div class="meta">
+              <span>구분: 외부 공개</span>
+              <strong>Open</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="section-head">
+          <div class="section-title-wrap">
+            <h2>BC 파트</h2>
+            <p>현재는 Wire-work 중심으로 구성하고, 이후 필요한 업무 링크를 확장할 수 있게 열어 두었습니다.</p>
+          </div>
+          <div class="part-badge">BC</div>
+        </div>
+        <div class="card-grid">
+          <a class="nav-card coming-soon" href="#" aria-label="BC Wire-work" onclick="return false;">
+            <div class="card-top">
+              <div class="card-index">01</div>
+              <span class="state building">준비중</span>
+            </div>
+            <h3>Wire-work</h3>
+            <p>BC 파트 전용 업무 진입 포인트입니다. 실제 목적지 URL만 넣으면 바로 운영할 수 있습니다.</p>
+            <div class="meta">
+              <span>연결 예정</span>
+              <strong>Soon</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="section-head">
+          <div class="section-title-wrap">
+            <h2>TA 파트</h2>
+            <p>TA 파트도 동일한 구조로 맞춰 두어 사용성과 일관성을 유지했습니다.</p>
+          </div>
+          <div class="part-badge">TA</div>
+        </div>
+        <div class="card-grid">
+          <a class="nav-card coming-soon" href="#" aria-label="TA Wire-work" onclick="return false;">
+            <div class="card-top">
+              <div class="card-index">01</div>
+              <span class="state building">준비중</span>
+            </div>
+            <h3>Wire-work</h3>
+            <p>TA 파트 전용 업무 페이지 자리입니다. 향후 링크를 연결해 바로 진입 가능한 카드로 쓰면 됩니다.</p>
+            <div class="meta">
+              <span>연결 예정</span>
+              <strong>Soon</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-note">
+      실제 서비스 주소가 정해지면 각 카드의 <code>href="#"</code> 부분만 교체하면 됩니다.
+      필요하면 다음 단계로 로고 이미지 추가, 사내망/외부망 아이콘화, 즐겨찾기 영역도 이어서 붙일 수 있습니다.
+    </div>
+  </div>
+</body>
+</html>
