@@ -239,6 +239,20 @@
       border-color: rgba(215, 221, 227, 0.88);
     }
 
+    .nav-card.disabled {
+      background: linear-gradient(180deg, rgba(236, 239, 242, 0.88), rgba(223, 228, 233, 0.82));
+      border-color: rgba(190, 198, 206, 0.95);
+      opacity: 0.82;
+      cursor: default;
+    }
+
+    .nav-card.disabled:hover,
+    .nav-card.disabled:focus-visible {
+      transform: none;
+      box-shadow: none;
+      border-color: rgba(190, 198, 206, 0.95);
+    }
+
     .card-top {
       display: flex;
       align-items: start;
@@ -374,7 +388,7 @@
           <div class="part-badge">MSM</div>
         </div>
         <div class="card-grid">
-          <a class="nav-card" href="#" aria-label="LG Techops team Effort">
+          <a class="nav-card disabled" href="#" aria-label="LG Techops team Effort">
             <div class="card-top">
               <div class="card-index">01</div>
               <span class="state building">구현중</span>
