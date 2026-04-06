@@ -333,7 +333,8 @@
       margin: 0;
       padding: 0;
       display: grid;
-      gap: 8px;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .link-list a {
@@ -365,6 +366,43 @@
 
     .link-list a:hover,
     .link-list a:focus-visible {
+      border-color: rgba(165, 0, 52, 0.4);
+      box-shadow: 0 12px 22px rgba(165, 0, 52, 0.12);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .link-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .link-grid a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(215, 221, 227, 0.8);
+      text-decoration: none;
+      color: var(--lg-gray-900);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    }
+
+    .link-grid a span {
+      color: var(--lg-gray-500);
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .link-grid a:hover,
+    .link-grid a:focus-visible {
       border-color: rgba(165, 0, 52, 0.4);
       box-shadow: 0 12px 22px rgba(165, 0, 52, 0.12);
       transform: translateY(-2px);
@@ -413,6 +451,10 @@
         grid-template-columns: 1fr;
       }
 
+      .link-list ul {
+        grid-template-columns: 1fr;
+      }
+
       h1 {
         font-size: 2rem;
       }
@@ -440,6 +482,29 @@
     </section>
 
     <main>
+      <section class="team-section">
+        <div class="section-head">
+          <div class="section-title-wrap">
+            <h2>공통 영역</h2>
+          </div>
+          <div class="part-badge">COMMON</div>
+        </div>
+        <div class="link-grid">
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1363068334/26%EB%85%84+%EA%B3%A0%EA%B0%9D%EC%82%AC+%EC%A3%BC%EC%9A%94+%EB%B3%80%EA%B2%BD%EC%9E%91%EC%97%85" target="_blank" rel="noreferrer">
+            고객사 주요 변경작업
+            <span>Wiki</span>
+          </a>
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1353457083/26%EB%85%84+%EC%9E%AC%ED%83%9D+%ED%98%84%ED%99%A9" target="_blank" rel="noreferrer">
+            재택현황 작성!
+            <span>Wiki</span>
+          </a>
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1393984393/MRO+2026" target="_blank" rel="noreferrer">
+            MRO 신청!
+            <span>Wiki</span>
+          </a>
+        </div>
+      </section>
+
       <section class="team-section">
         <div class="section-head">
           <div class="section-title-wrap">
@@ -511,28 +576,6 @@
           </ul>
         </div>
       </section>
-
-      <section class="team-section">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>공통 영역</h2>
-          </div>
-          <div class="part-badge">COMMON</div>
-        </div>
-        <div class="card-grid">
-          <a class="nav-card" href="https://kiho-cns.github.io/sangamlunch/" aria-label="상암 점심 메뉴 추천" target="_blank" rel="noreferrer">
-            <div class="card-top">
-              <div class="card-index">01</div>
-              <span class="state public">Public</span>
-            </div>
-            <h3>상암 점심 메뉴 추천</h3>
-            <p>상암 점심 메뉴 추천</p>
-            <div class="meta">
-              <span>Public</span>
-              <strong>COMMON</strong>
-            </div>
-          </a>
-        </div>
       </section>
 
       <section class="team-section">
@@ -576,6 +619,29 @@
             <div class="meta">
               <span>Wire-work</span>
               <strong>TA</strong>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="section-head">
+          <div class="section-title-wrap">
+            <h2>기타</h2>
+          </div>
+          <div class="part-badge">ETC</div>
+        </div>
+        <div class="card-grid">
+          <a class="nav-card" href="https://kiho-cns.github.io/sangamlunch/" aria-label="상암 점심 메뉴 추천" target="_blank" rel="noreferrer">
+            <div class="card-top">
+              <div class="card-index">01</div>
+              <span class="state public">Public</span>
+            </div>
+            <h3>상암 점심 메뉴 추천</h3>
+            <p>상암 점심 메뉴 추천</p>
+            <div class="meta">
+              <span>Public</span>
+              <strong>ETC</strong>
             </div>
           </a>
         </div>
