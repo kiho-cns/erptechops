@@ -310,6 +310,62 @@
       font-size: 0.9rem;
     }
 
+    .link-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(215, 221, 227, 0.7);
+    }
+
+    .link-list h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--lg-gray-900);
+    }
+
+    .link-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .link-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(215, 221, 227, 0.8);
+      text-decoration: none;
+      color: var(--lg-gray-900);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    }
+
+    .link-list a span {
+      color: var(--lg-gray-500);
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .link-list a:hover,
+    .link-list a:focus-visible {
+      border-color: rgba(165, 0, 52, 0.4);
+      box-shadow: 0 10px 20px rgba(165, 0, 52, 0.1);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
     .meta {
       display: flex;
       align-items: center;
@@ -428,6 +484,29 @@
               <strong>MSM</strong>
             </div>
           </a>
+        </div>
+        <div class="link-list">
+          <h4>MSM SharePoint Links</h4>
+          <ul>
+            <li>
+              <a href="https://lgcns.sharepoint.com/:x:/s/SAPECSTechops/Ef2wTPRGBedPndD616SklGQBJnzgDZ_F0ukT2X46rkGgpQ?e=NiQNot" target="_blank" rel="noreferrer">
+                티켓 처리현황
+                <span>SharePoint</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://lgcns.sharepoint.com/:x:/s/SAPECSTechops/IQBvHTB9ionXSpGkIbv1OQyXAXH7QsxIV2ZvWWqZK7PDQgQ?e=crV2dG" target="_blank" rel="noreferrer">
+                MSM 파트 에포트 입력
+                <span>SharePoint</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://lgcns.sharepoint.com/:x:/s/SAPECSTechops/IQBKK4GG7ttgR6E1my121CvJAZH_nuH8Uq7uIZPZkmt2_qA?e=Q3tuLs" target="_blank" rel="noreferrer">
+                GDN 에포트 입력
+                <span>SharePoint</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 
