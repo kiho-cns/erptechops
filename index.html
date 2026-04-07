@@ -848,8 +848,10 @@
       });
 
       sections.forEach((section) => {
+        const isCommon = section.dataset.section === 'common';
+        const isEtc = section.dataset.section === 'etc';
         const isActive = section.dataset.section === tabName;
-        section.style.display = isActive ? '' : 'none';
+        section.style.display = isCommon || isEtc || isActive ? '' : 'none';
       });
     }
 
