@@ -81,11 +81,21 @@
     }
 
 
-    .brand-logo {
-      width: 210px;
-      height: auto;
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
       display: block;
-      object-fit: contain;
+    }
+
+    .brand-wordmark {
+      height: 40px;
+      display: block;
     }
 
     .eyebrow {
@@ -656,7 +666,10 @@
       <div class="hero-copy">
         <div class="hero-header">
           <div class="brand" aria-label="LG style brand mark">
-          <img class="brand-logo" src="assets/lgcns-logo.png" alt="LG CNS 로고">
+          <span class="brand-logo-wrap" aria-label="LG CNS 로고">
+            <img class="brand-mark" src="assets/lgcns-mark.png" alt="LG 로고">
+            <img class="brand-wordmark" src="assets/lgcns-wordmark-white.png" alt="LG CNS">
+          </span>
             <div>
               <p class="eyebrow">ERP TECHOPS TEAM</p>
               <strong>ERP 솔루션 서비스팀</strong>
