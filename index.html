@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ERP 솔루션 서비스팀 | Team Navigation</title>
+  <link rel="icon" href="assets/lg-favicon.svg" type="image/svg+xml">
   <style>
     :root {
       --lg-red: #a50034;
@@ -80,33 +81,10 @@
     }
 
 
-    .brand-mark {
-      position: relative;
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.22);
-    }
-
-    .brand-mark::before {
-      content: "";
-      position: absolute;
-      inset: 7px;
-      border-radius: 50%;
-      background: var(--lg-red);
-    }
-
-    .brand-mark::after {
-      content: "LG";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
+    .brand-logo {
+      width: 180px;
+      height: auto;
+      display: block;
     }
 
     .eyebrow {
@@ -590,7 +568,7 @@
       <div class="hero-copy">
         <div class="hero-header">
           <div class="brand" aria-label="LG style brand mark">
-            <div class="brand-mark" aria-hidden="true"></div>
+          <img class="brand-logo" src="assets/lgcns-logo.svg" alt="LG CNS 로고">
             <div>
               <p class="eyebrow">ERP TECHOPS TEAM</p>
               <strong>ERP 솔루션 서비스팀</strong>
