@@ -157,24 +157,31 @@
     }
 
     .tab-bar.primary {
-      background: rgba(165, 0, 52, 0.08);
-      border-color: rgba(165, 0, 52, 0.3);
+      background: transparent;
+      border-color: rgba(215, 221, 227, 0.7);
       position: sticky;
       top: 10px;
       z-index: 5;
-      padding: 8px;
-      border-radius: 999px;
+      padding: 6px 0;
+      border-radius: 0;
       gap: 0;
+      justify-content: center;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-bottom: 1px solid rgba(215, 221, 227, 0.8);
+      box-shadow: none;
     }
 
     .tab-bar.primary .tab {
-      background: transparent;
-      border-color: transparent;
-      border-radius: 999px;
-      box-shadow: none;
-      padding: 12px 22px;
-      margin: 0 3px;
-      font-size: 1rem;
+      background: #fff;
+      border-color: rgba(215, 221, 227, 0.9);
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(32, 37, 43, 0.06);
+      padding: 10px 18px;
+      margin: 0 6px;
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
     }
 
     .section-label {
@@ -320,16 +327,16 @@
 
     .tab:hover,
     .tab:focus-visible {
-      border-color: rgba(165, 0, 52, 0.25);
-      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(165, 0, 52, 0.35);
+      background: #fff;
       transform: translateY(-1px);
-      box-shadow: 0 8px 16px rgba(165, 0, 52, 0.1);
+      box-shadow: 0 8px 16px rgba(165, 0, 52, 0.12);
       outline: none;
     }
 
     .tab.active {
-      background: #fff;
-      border-color: rgba(165, 0, 52, 0.35);
+      background: rgba(165, 0, 52, 0.08);
+      border-color: rgba(165, 0, 52, 0.45);
       color: var(--lg-red);
       box-shadow: 0 10px 18px rgba(165, 0, 52, 0.12);
     }
