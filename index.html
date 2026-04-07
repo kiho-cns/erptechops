@@ -202,14 +202,14 @@
     }
 
     .switcher-area {
-      padding: 16px 18px 20px;
+      padding: 6px 0 0;
       border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, rgba(165, 0, 52, 0.05), rgba(255, 255, 255, 0.45));
-      border: 1px solid rgba(165, 0, 52, 0.12);
+      background: transparent;
+      border: none;
     }
 
     .switcher-section {
-      padding: 8px 4px 0;
+      padding: 6px 0 0;
       background: transparent;
       border: none;
       box-shadow: none;
@@ -217,17 +217,20 @@
 
     .active-glow {
       border-radius: var(--radius-xl);
-      background: linear-gradient(140deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.92));
-      padding: 14px;
+      background: transparent;
+      padding: 0;
       position: relative;
     }
 
     .active-glow::before {
       content: "";
       position: absolute;
-      inset: -2px;
-      border-radius: calc(var(--radius-xl) + 2px);
-      background: linear-gradient(135deg, rgba(165, 0, 52, 0.2), rgba(165, 0, 52, 0.02));
+      left: 0;
+      right: 0;
+      top: -6px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(165, 0, 52, 0.28);
       opacity: 0;
       transition: opacity 180ms ease;
       z-index: 0;
