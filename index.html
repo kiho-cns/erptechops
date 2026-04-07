@@ -526,12 +526,6 @@
 
     <main>
       <section class="team-section" data-section="common">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>공통</h2>
-          </div>
-          <div class="part-badge">COMMON</div>
-        </div>
         <div class="link-grid">
           <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1363068334/26%EB%85%84+%EA%B3%A0%EA%B0%9D%EC%82%AC+%EC%A3%BC%EC%9A%94+%EB%B3%80%EA%B2%BD%EC%9E%91%EC%97%85" target="_blank" rel="noreferrer">
             고객사 주요 변경작업
@@ -549,20 +543,12 @@
       </section>
 
       <div class="tab-bar" role="tablist" aria-label="파트 탭">
-        <button class="tab fixed" type="button" aria-hidden="true">공통 - 즐겨찾기</button>
         <button class="tab active" type="button" data-tab="msm" role="tab" aria-selected="true">MSM</button>
         <button class="tab" type="button" data-tab="bc" role="tab" aria-selected="false">BC</button>
         <button class="tab" type="button" data-tab="ta" role="tab" aria-selected="false">TA</button>
-        <button class="tab" type="button" data-tab="etc" role="tab" aria-selected="false">기타</button>
       </div>
 
       <section class="team-section" data-section="msm">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>MSM 파트</h2>
-          </div>
-          <div class="part-badge">MSM</div>
-        </div>
         <div class="card-grid">
           <a class="nav-card disabled" href="#" aria-label="LG Techops team Effort">
             <div class="card-top">
@@ -630,12 +616,6 @@
       </section>
 
       <section class="team-section" data-section="bc">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>BC 파트</h2>
-          </div>
-          <div class="part-badge">BC</div>
-        </div>
         <div class="card-grid">
           <a class="nav-card" href="https://wire.lgcns.com/jira/projects/DP09390305?selectedItem=jp.ricksoft.plugins.wbsgantt-for-jira:wbsgantt-project" aria-label="BC Wire-work" target="_blank" rel="noreferrer">
             <div class="card-top">
@@ -653,12 +633,6 @@
       </section>
 
       <section class="team-section" data-section="ta">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>TA 파트</h2>
-          </div>
-          <div class="part-badge">TA</div>
-        </div>
         <div class="card-grid">
           <a class="nav-card" href="https://wire.lgcns.com/jira/projects/DP09390305?selectedItem=jp.ricksoft.plugins.wbsgantt-for-jira:wbsgantt-project" aria-label="TA Wire-work" target="_blank" rel="noreferrer">
             <div class="card-top">
@@ -676,12 +650,6 @@
       </section>
 
       <section class="team-section" data-section="etc">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <h2>기타</h2>
-          </div>
-          <div class="part-badge">ETC</div>
-        </div>
         <div class="card-grid">
           <a class="nav-card" href="https://kiho-cns.github.io/sangamlunch/" aria-label="상암 점심 메뉴 추천" target="_blank" rel="noreferrer">
             <div class="card-top">
@@ -713,8 +681,9 @@
 
       sections.forEach((section) => {
         const isCommon = section.dataset.section === 'common';
+        const isEtc = section.dataset.section === 'etc';
         const isActive = section.dataset.section === tabName;
-        section.style.display = isCommon || isActive ? '' : 'none';
+        section.style.display = isCommon || isEtc || isActive ? '' : 'none';
       });
     }
 
