@@ -140,6 +140,45 @@
       margin-top: 8px;
     }
 
+    .tab-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tab {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .tab:hover,
+    .tab:focus-visible {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .tab.active {
+      background: rgba(255, 255, 255, 0.28);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .tab.fixed {
+      cursor: default;
+      background: rgba(255, 255, 255, 0.28);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
     .pill {
       display: inline-flex;
       align-items: center;
@@ -473,18 +512,18 @@
             <strong>ERP 솔루션 서비스팀</strong>
           </div>
         </div>
-        <div class="status-row">
-          <span class="pill">MSM · 운영/현황</span>
-          <span class="pill">BC · Wire-work</span>
-          <span class="pill">TA · Wire-work</span>
-          <span class="pill">공통 - 즐겨찾기</span>
-          <span class="pill">기타 - 기타</span>
+        <div class="tab-bar" role="tablist" aria-label="파트 탭">
+          <button class="tab fixed" type="button" aria-hidden="true">공통 - 즐겨찾기</button>
+          <button class="tab active" type="button" data-tab="msm" role="tab" aria-selected="true">MSM</button>
+          <button class="tab" type="button" data-tab="bc" role="tab" aria-selected="false">BC</button>
+          <button class="tab" type="button" data-tab="ta" role="tab" aria-selected="false">TA</button>
+          <button class="tab" type="button" data-tab="etc" role="tab" aria-selected="false">기타</button>
         </div>
       </div>
     </section>
 
     <main>
-      <section class="team-section">
+      <section class="team-section" data-section="common">
         <div class="section-head">
           <div class="section-title-wrap">
             <h2>공통</h2>
@@ -507,7 +546,7 @@
         </div>
       </section>
 
-      <section class="team-section">
+      <section class="team-section" data-section="msm">
         <div class="section-head">
           <div class="section-title-wrap">
             <h2>MSM 파트</h2>
@@ -580,7 +619,7 @@
       </section>
       </section>
 
-      <section class="team-section">
+      <section class="team-section" data-section="bc">
         <div class="section-head">
           <div class="section-title-wrap">
             <h2>BC 파트</h2>
@@ -603,7 +642,7 @@
         </div>
       </section>
 
-      <section class="team-section">
+      <section class="team-section" data-section="ta">
         <div class="section-head">
           <div class="section-title-wrap">
             <h2>TA 파트</h2>
@@ -626,7 +665,7 @@
         </div>
       </section>
 
-      <section class="team-section">
+      <section class="team-section" data-section="etc">
         <div class="section-head">
           <div class="section-title-wrap">
             <h2>기타</h2>
@@ -650,5 +689,30 @@
       </section>
     </main>
   </div>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('.tab[data-tab]'));
+    const sections = Array.from(document.querySelectorAll('.team-section[data-section]'));
+
+    function setActive(tabName) {
+      tabs.forEach((tab) => {
+        const isActive = tab.dataset.tab === tabName;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      sections.forEach((section) => {
+        const isCommon = section.dataset.section === 'common';
+        const isActive = section.dataset.section === tabName;
+        section.style.display = isCommon || isActive ? '' : 'none';
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => setActive(tab.dataset.tab));
+    });
+
+    setActive('msm');
+  </script>
 </body>
 </html>
