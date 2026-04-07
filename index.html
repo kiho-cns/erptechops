@@ -668,24 +668,6 @@
     </section>
 
     <main>
-      <section class="team-section" data-section="common">
-        <div class="section-label">공통 - 즐겨찾기</div>
-        <div class="link-grid">
-          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1363068334/26%EB%85%84+%EA%B3%A0%EA%B0%9D%EC%82%AC+%EC%A3%BC%EC%9A%94+%EB%B3%80%EA%B2%BD%EC%9E%91%EC%97%85" target="_blank" rel="noreferrer">
-            고객사 주요 변경작업
-            <span>Wiki</span>
-          </a>
-          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1353457083/26%EB%85%84+%EC%9E%AC%ED%83%9D+%ED%98%84%ED%99%A9" target="_blank" rel="noreferrer">
-            재택현황 작성!
-            <span>Wiki</span>
-          </a>
-          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1393984393/MRO+2026" target="_blank" rel="noreferrer">
-            MRO 신청!
-            <span>Wiki</span>
-          </a>
-        </div>
-      </section>
-
       <section class="switcher-area">
         <div class="tab-bar primary" role="tablist" aria-label="파트 탭">
           <button class="tab active" type="button" data-tab="msm" role="tab" aria-selected="true">MSM</button>
@@ -810,6 +792,23 @@
           </div>
         </div>
       </section>
+
+      <section class="team-section" data-section="common">
+        <div class="section-label">공통 - 즐겨찾기</div>
+        <div class="link-grid">
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1363068334/26%EB%85%84+%EA%B3%A0%EA%B0%9D%EC%82%AC+%EC%A3%BC%EC%9A%94+%EB%B3%80%EA%B2%BD%EC%9E%91%EC%97%85" target="_blank" rel="noreferrer">
+            고객사 주요 변경작업
+            <span>Wiki</span>
+          </a>
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1353457083/26%EB%85%84+%EC%9E%AC%ED%83%9D+%ED%98%84%ED%99%A9" target="_blank" rel="noreferrer">
+            재택현황 작성!
+            <span>Wiki</span>
+          </a>
+          <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1393984393/MRO+2026" target="_blank" rel="noreferrer">
+            MRO 신청!
+            <span>Wiki</span>
+          </a>
+        </div>
       </section>
 
       <section class="team-section" data-section="etc">
@@ -849,10 +848,8 @@
       });
 
       sections.forEach((section) => {
-        const isCommon = section.dataset.section === 'common';
-        const isEtc = section.dataset.section === 'etc';
         const isActive = section.dataset.section === tabName;
-        section.style.display = isCommon || isEtc || isActive ? '' : 'none';
+        section.style.display = isActive ? '' : 'none';
       });
     }
 
