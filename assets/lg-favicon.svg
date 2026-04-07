@@ -1,7 +1,0 @@
-<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LG">
-  <rect width="128" height="128" fill="none"/>
-  <circle cx="64" cy="64" r="54" fill="#a50034"/>
-  <circle cx="64" cy="64" r="40" fill="none" stroke="#ffffff" stroke-width="10"/>
-  <circle cx="49" cy="46" r="7" fill="#ffffff"/>
-  <path d="M70 44h22v9H80v30h-10z" fill="#ffffff"/>
-</svg>
