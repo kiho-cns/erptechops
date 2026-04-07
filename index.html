@@ -204,11 +204,6 @@
       color: var(--lg-red);
     }
 
-    .team-section.active-section {
-      border-color: rgba(165, 0, 52, 0.18);
-      box-shadow: none;
-    }
-
     .switcher-area {
       padding: 6px 0 0;
       border-radius: var(--radius-xl);
@@ -230,27 +225,9 @@
       position: relative;
     }
 
-    .active-glow::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: -6px;
-      height: 4px;
-      border-radius: 999px;
-      background: rgba(165, 0, 52, 0.28);
-      opacity: 0;
-      transition: opacity 180ms ease;
-      z-index: 0;
-    }
-
     .active-glow > * {
       position: relative;
       z-index: 1;
-    }
-
-    .active-glow.is-active::before {
-      opacity: 1;
     }
 
     .fab-mail {
@@ -872,17 +849,11 @@
         tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
-      const glows = Array.from(document.querySelectorAll('.active-glow[data-glow]'));
-      glows.forEach((glow) => {
-        glow.classList.toggle('is-active', glow.dataset.glow === tabName);
-      });
-
       sections.forEach((section) => {
         const isCommon = section.dataset.section === 'common';
         const isEtc = section.dataset.section === 'etc';
         const isActive = section.dataset.section === tabName;
         section.style.display = isCommon || isEtc || isActive ? '' : 'none';
-        section.classList.toggle('active-section', isActive);
       });
     }
 
