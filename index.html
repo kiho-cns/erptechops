@@ -133,8 +133,28 @@
       color: rgba(255, 255, 255, 0.88);
     }
 
-    .hero-center {
-      text-align: center;
+    .hero-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-badge {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      font-size: 0.92rem;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .status-row {
@@ -564,15 +584,17 @@
 <body>
   <div class="page-shell">
     <section class="hero">
-      <div class="hero-copy hero-center">
-        <div class="brand" aria-label="LG style brand mark">
-          <div class="brand-mark" aria-hidden="true"></div>
-          <div>
-            <p class="eyebrow">ERP TECHOPS TEAM</p>
-            <strong>ERP 솔루션 서비스팀</strong>
+      <div class="hero-copy">
+        <div class="hero-header">
+          <div class="brand" aria-label="LG style brand mark">
+            <div class="brand-mark" aria-hidden="true"></div>
+            <div>
+              <p class="eyebrow">ERP TECHOPS TEAM</p>
+              <strong>ERP 솔루션 서비스팀</strong>
+            </div>
           </div>
+          <span class="hero-badge">팀 네비게이터(이름 공모중)</span>
         </div>
-        <h1>팀 네비게이터(이름 공모중)</h1>
       </div>
     </section>
 
