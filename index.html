@@ -152,6 +152,36 @@
       box-shadow: 0 10px 20px rgba(32, 37, 43, 0.06);
     }
 
+    .tab-bar.primary {
+      background: rgba(165, 0, 52, 0.12);
+      border-color: rgba(165, 0, 52, 0.35);
+    }
+
+    .tab-bar.primary .tab {
+      background: #fff;
+      border-color: rgba(165, 0, 52, 0.18);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(32, 37, 43, 0.06);
+      color: var(--lg-gray-700);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .section-label.primary {
+      background: rgba(165, 0, 52, 0.1);
+      color: var(--lg-red);
+    }
+
     .tab {
       border: 1px solid rgba(215, 221, 227, 0.9);
       background: rgba(255, 255, 255, 0.92);
@@ -526,6 +556,7 @@
 
     <main>
       <section class="team-section" data-section="common">
+        <div class="section-label">공통 - 즐겨찾기</div>
         <div class="link-grid">
           <a href="https://wire.lgcns.com/confluence/spaces/DS02030832Y2020/pages/1363068334/26%EB%85%84+%EA%B3%A0%EA%B0%9D%EC%82%AC+%EC%A3%BC%EC%9A%94+%EB%B3%80%EA%B2%BD%EC%9E%91%EC%97%85" target="_blank" rel="noreferrer">
             고객사 주요 변경작업
@@ -542,7 +573,7 @@
         </div>
       </section>
 
-      <div class="tab-bar" role="tablist" aria-label="파트 탭">
+      <div class="tab-bar primary" role="tablist" aria-label="파트 탭">
         <button class="tab active" type="button" data-tab="msm" role="tab" aria-selected="true">MSM</button>
         <button class="tab" type="button" data-tab="bc" role="tab" aria-selected="false">BC</button>
         <button class="tab" type="button" data-tab="ta" role="tab" aria-selected="false">TA</button>
@@ -650,6 +681,7 @@
       </section>
 
       <section class="team-section" data-section="etc">
+        <div class="section-label primary">기타</div>
         <div class="card-grid">
           <a class="nav-card" href="https://kiho-cns.github.io/sangamlunch/" aria-label="상암 점심 메뉴 추천" target="_blank" rel="noreferrer">
             <div class="card-top">
