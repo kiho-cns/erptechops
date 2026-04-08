@@ -193,29 +193,29 @@
     }
 
     .tab-bar.primary {
-      background: transparent;
-      border-color: rgba(215, 221, 227, 0.7);
+      background: rgba(255, 255, 255, 0.72);
+      border-color: rgba(215, 221, 227, 0.6);
       position: sticky;
       top: 10px;
       z-index: 5;
-      padding: 6px 0;
-      border-radius: 0;
+      padding: 10px;
+      border-radius: 16px;
       gap: 0;
       justify-content: center;
-      border-left: none;
-      border-right: none;
-      border-top: none;
-      border-bottom: 1px solid rgba(215, 221, 227, 0.8);
-      box-shadow: none;
+      border-left: 1px solid rgba(215, 221, 227, 0.6);
+      border-right: 1px solid rgba(215, 221, 227, 0.6);
+      border-top: 1px solid rgba(215, 221, 227, 0.6);
+      border-bottom: 1px solid rgba(215, 221, 227, 0.6);
+      box-shadow: 0 10px 18px rgba(32, 37, 43, 0.06);
     }
 
     .tab-bar.primary .tab {
-      background: #fff;
-      border-color: rgba(215, 221, 227, 0.9);
-      border-radius: 6px;
-      box-shadow: 0 4px 10px rgba(32, 37, 43, 0.06);
-      padding: 10px 18px;
-      margin: 0 6px;
+      background: transparent;
+      border-color: transparent;
+      border-radius: 999px;
+      box-shadow: none;
+      padding: 10px 22px;
+      margin: 0 4px;
       font-size: 0.98rem;
       letter-spacing: 0.02em;
     }
@@ -241,15 +241,15 @@
     }
 
     .switcher-area {
-      padding: 6px 0 0;
+      padding: 0;
       border-radius: var(--radius-xl);
       background: transparent;
       border: none;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .switcher-section {
-      padding: 6px 0 0;
+      padding: 0;
       background: transparent;
       border: none;
       box-shadow: none;
@@ -378,10 +378,10 @@
     }
 
     .tab.active {
-      background: rgba(165, 0, 52, 0.08);
-      border-color: rgba(165, 0, 52, 0.45);
-      color: var(--lg-red);
-      box-shadow: 0 10px 18px rgba(165, 0, 52, 0.12);
+      background: rgba(165, 0, 52, 0.12);
+      border-color: rgba(165, 0, 52, 0.35);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(165, 0, 52, 0.14);
     }
 
     .tab.active::after {
@@ -411,16 +411,16 @@
     main {
       margin-top: 28px;
       display: grid;
-      gap: 40px;
+      gap: 36px;
     }
 
     .team-section {
-      padding: 22px;
+      padding: 20px;
       border-radius: var(--radius-xl);
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(215, 221, 227, 0.55);
-      box-shadow: 0 12px 26px rgba(32, 37, 43, 0.05);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(215, 221, 227, 0.45);
+      box-shadow: 0 8px 18px rgba(32, 37, 43, 0.04);
+      backdrop-filter: blur(6px);
     }
 
     .section-head {
