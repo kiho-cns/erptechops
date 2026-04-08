@@ -62,6 +62,16 @@
       color: #fff;
     }
 
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.12), transparent 35%);
+      pointer-events: none;
+    }
+
     .hero::after {
       content: "";
       position: absolute;
@@ -144,6 +154,23 @@
       font-size: 0.82rem;
       font-weight: 700;
       white-space: nowrap;
+    }
+
+    .hero-sub {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .hero-sub span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .status-row {
@@ -296,6 +323,35 @@
     .fab-mail:hover .fab-text,
     .fab-mail:focus-visible .fab-text {
       display: block;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 18px 22px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(215, 221, 227, 0.6);
+      color: var(--lg-gray-700);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    footer .foot-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    footer .foot-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--lg-gray-500);
     }
 
     .tab {
@@ -668,16 +724,21 @@
       <div class="hero-copy">
         <div class="hero-header">
           <div class="brand" aria-label="LG style brand mark">
-          <span class="brand-logo-wrap" aria-label="LG CNS 로고">
-            <img class="brand-mark" src="assets/lgcns-mark.png" alt="LG 로고">
-            <img class="brand-wordmark" src="assets/lgcns-wordmark-white.png" alt="LG CNS">
-          </span>
+            <span class="brand-logo-wrap" aria-label="LG CNS 로고">
+              <img class="brand-mark" src="assets/lgcns-mark.png" alt="LG 로고">
+              <img class="brand-wordmark" src="assets/lgcns-wordmark-white.png" alt="LG CNS">
+            </span>
             <div>
               <p class="eyebrow">ERP TECHOPS TEAM</p>
               <strong>ERP 솔루션 서비스팀</strong>
             </div>
           </div>
           <span class="hero-badge">팀 네비게이터(이름 공모중)</span>
+        </div>
+        <div class="hero-sub">
+          <span>업무 링크 허브</span>
+          <span>빠른 이동</span>
+          <span>공통/파트별 정리</span>
         </div>
       </div>
     </section>
@@ -842,6 +903,17 @@
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="foot-left">
+        ERP TECHOPS TEAM
+      </div>
+      <div class="foot-right">
+        문의: choimaest@lgcns.com
+        <span>·</span>
+        Updated via GitHub Pages
+      </div>
+    </footer>
   </div>
 
   <a class="fab-mail" href="mailto:choimaest@lgcns.com?subject=%EC%88%98%EC%A0%95%20%EC%9A%94%EC%B2%AD" aria-label="수정요청 메일 보내기">
