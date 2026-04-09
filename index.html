@@ -210,14 +210,22 @@
     }
 
     .tab-bar.primary .tab {
-      background: transparent;
-      border-color: transparent;
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(215, 221, 227, 0.8);
       border-radius: 999px;
       box-shadow: none;
       padding: 10px 22px;
       margin: 0 6px 0 0;
       font-size: 0.98rem;
       letter-spacing: 0.02em;
+      color: var(--lg-gray-900);
+    }
+
+    .tab-bar.primary .tab.active {
+      background: var(--lg-red);
+      border-color: rgba(165, 0, 52, 0.8);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(165, 0, 52, 0.18);
     }
 
     .section-label {
